@@ -1,0 +1,3 @@
+[submodule "Assets/Extension/LGKScreenInput"]
+	path = Assets/Extension/LGKScreenInput
+	url = https://github.com/NED-Studio/Unity-LGKScreenInput
