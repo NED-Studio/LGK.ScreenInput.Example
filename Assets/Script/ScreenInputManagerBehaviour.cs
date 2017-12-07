@@ -27,9 +27,10 @@ namespace LGK.ScreenInputExample
 
 		private void OnEnable ()
 		{
-			//m_Manager.OnPointerDown += OnPointerDown_Handler;
-			//m_Manager.OnPointerMoved += OnPointerMoved_Handler;
-			//m_Manager.OnPointerUp += OnPointerUp_Handler;
+			m_Manager.OnPointerDown += OnPointerDown_Handler;
+			m_Manager.OnPointerMoved += OnPointerMoved_Handler;
+			m_Manager.OnPointerUp += OnPointerUp_Handler;
+
 			m_Manager.OnTap += OnTap_Handler;
 			m_Manager.OnDoubleTap += OnDoubleTap_Handler;
 			m_Manager.OnLongTap += OnLongTap_Handler;
@@ -40,9 +41,10 @@ namespace LGK.ScreenInputExample
 
 		private void OnDisable ()
 		{
-			//m_Manager.OnPointerDown -= OnPointerDown_Handler;
-			//m_Manager.OnPointerMoved -= OnPointerMoved_Handler;
-			//m_Manager.OnPointerUp -= OnPointerUp_Handler;
+			m_Manager.OnPointerDown -= OnPointerDown_Handler;
+			m_Manager.OnPointerMoved -= OnPointerMoved_Handler;
+			m_Manager.OnPointerUp -= OnPointerUp_Handler;
+
 			m_Manager.OnTap -= OnTap_Handler;
 			m_Manager.OnDoubleTap -= OnDoubleTap_Handler;
 			m_Manager.OnLongTap -= OnLongTap_Handler;
@@ -59,17 +61,17 @@ namespace LGK.ScreenInputExample
 
 		void OnPointerDown_Handler (IPointer pointer)
 		{
-			//Debug.Log(string.Format("OnPointerMoved_Handler[position:{0}, deltaPosition:{1}]", pointer.Position, pointer.DeltaPosition));   
+			Debug.Log (string.Format ("OnPointerMoved_Handler[position:{0}, deltaPosition:{1}]", pointer.Position, pointer.DeltaPosition));   
 		}
 
 		void OnPointerMoved_Handler (IPointer pointer)
 		{
-			//Debug.Log(string.Format("OnPointerMoved_Handler[position:{0}, deltaPosition:{1}]", pointer.Position, pointer.DeltaPosition));
+			Debug.Log (string.Format ("OnPointerMoved_Handler[position:{0}, deltaPosition:{1}]", pointer.Position, pointer.DeltaPosition));
 		}
 
 		void OnPointerUp_Handler (IPointer pointer)
 		{
-			//Debug.Log(string.Format("OnPointerMoved_Handler[position:{0}, deltaPosition:{1}]", pointer.Position, pointer.DeltaPosition));
+			Debug.Log (string.Format ("OnPointerMoved_Handler[position:{0}, deltaPosition:{1}]", pointer.Position, pointer.DeltaPosition));
 		}
 
 		void OnTap_Handler (Vector2 position, float totalTime)
@@ -79,12 +81,12 @@ namespace LGK.ScreenInputExample
 
 		void OnDoubleTap_Handler (Vector2 position, float totalTime)
 		{
-			m_ActionInfo.text = "Double Tab" + position.ToString ();
+			m_ActionInfo.text = "Double Tap" + position.ToString ();
 		}
 
 		void OnLongTap_Handler (Vector2 position, float totalTime)
 		{
-			m_ActionInfo.text = "Long Tab" + position.ToString ();
+			m_ActionInfo.text = "Long Tap" + position.ToString ();
 		}
 
 		void OnSwipe_Handler (Vector2 direction, float totalTime)
